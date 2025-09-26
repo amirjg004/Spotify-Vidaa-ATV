@@ -1,0 +1,23 @@
+<!-- tvapp.androidtv.patched.html - load local polyfill + local vendors + local spotify bundle for testing -->
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1920,height=1080,initial-scale=1.0,user-scalable=no" />
+    <title>Spotify AndroidTV patched (dev)</title>
+    <style>html,body{height:100%;margin:0;background:#000;color:#fff;}body.loading #loadingScreen{opacity:1;}#loadingScreen{position:fixed;inset:0;background:#2E2F33;display:flex;align-items:center;justify-content:center;flex-direction:column;}#root{height:100%;}</style>
+    <!-- IMPORTANT: include the polyfill first -->
+    <script src="./androidtv_polyfill_for_spotify.js"></script>
+    <!-- then local vendors and spotify bundle (put vendors.*.js and spotifytv.js in this folder) -->
+    <script defer src="./vendors.d0a1785b3507050535af.js"></script>
+    <script defer src="./spotifytv.js"></script>
+  </head>
+  <body class="loading">
+    <div id="root"></div>
+    <div id="loadingScreen">
+      <img src="https://tv.scdn.co/roku/v2/ae77a26/images/loading-screen-spotify-logo.png" style="width:288px;height:auto;" />
+      <p id="errorField"></p>
+      <p id="errorCode"></p>
+    </div>
+  </body>
+</html>
